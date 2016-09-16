@@ -2,7 +2,6 @@ package com.dhiva.sorting;
 
 import java.io.DataInputStream;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class BubbleSort {
 	public static void main(String[] args) throws IOException {
