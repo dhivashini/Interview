@@ -16,7 +16,7 @@ public class SelectionSort {
 		sort(elements);
 	}
 
-	private static void sort(int[] elements) {	
+	private static int[] sort(int[] elements) {	
 		for (int i = 0; i < elements.length; i++) {
 			int min = elements[i];
 			for (int j = i+1; j < elements.length ; j++) {
@@ -30,9 +30,10 @@ public class SelectionSort {
 				}
 			}
 		}
-		System.out.println("the sorted array is");
+		System.out.println("the elements in the sorted array is");
 		for (int i = 0; i < elements.length; i++) {
 			System.out.println(elements[i]);
 		}
+		return elements;
 	}
 }
