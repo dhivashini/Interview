@@ -16,4 +16,12 @@ public class SortTest {
 		assertArrayEquals(actual, sortedElements);
 	}
 
+	@Test
+	public void test1() {
+		int[] elements = new int[]{3,4,5,1,2};
+		SelectionSort sortObj = new SelectionSort();
+		int[] sortedElements =sortObj.sort(elements);
+		int[] actual = new int[]{1,2,3,4,5};
+		assertArrayEquals(actual, sortedElements);
+	}
 }
