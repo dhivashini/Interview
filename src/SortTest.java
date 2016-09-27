@@ -24,4 +24,13 @@ public class SortTest {
 		int[] actual = new int[]{1,2,3,4,5};
 		assertArrayEquals(actual, sortedElements);
 	}
+	
+	@Test
+	public void test2() {
+		int[] elements = new int[]{12,11,13,5,6};
+		InsertionSort sortObj = new InsertionSort();
+		int[] sortedElements =sortObj.sort(elements);
+		int[] actual = new int[]{5,6,11,12,13};
+		assertArrayEquals(actual, sortedElements);
+	}
 }
