@@ -33,4 +33,13 @@ public class SortTest {
 		int[] actual = new int[]{5,6,11,12,13};
 		assertArrayEquals(actual, sortedElements);
 	}
+	
+	@Test
+	public void test3() {
+		int[] elements = new int[]{12,11,13,5,6};
+		MergeSort sortObj = new MergeSort();
+		int[] sortedElements =sortObj.sort(elements);
+		int[] actual = new int[]{5,6,11,12,13};
+		assertArrayEquals(actual, sortedElements);
+	}
 }
