@@ -2,6 +2,7 @@ package com.dhiva.implementation;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 public class ArraylistUsage {
 	public static void main(String[] args){
@@ -20,7 +21,7 @@ public class ArraylistUsage {
 		while(i.hasNext())
 		{
 			Object element = i.next();
-	         System.out.print(element + " ");
-		}
+	        System.out.print(element + " ");
+		}	
 	}
 }
