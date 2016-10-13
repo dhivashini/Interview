@@ -1,4 +1,4 @@
-package com.dhiva.implementation;
+package com.dhiva.linkedlist;
 
 public class LoopDetectionInLL {
 	Node head;
@@ -22,7 +22,7 @@ public class LoopDetectionInLL {
 	public void detectLoop() {
 		Node slow = head;
 		Node fast = head;
-		while (slow.next != null && fast.next != null && fast.next != null) {
+		while (slow != null && fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
 			if (slow == fast) {

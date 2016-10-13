@@ -1,8 +1,9 @@
+package com.dhiva.sorttests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.dhiva.sorting.*;;
+import com.dhiva.sorting.*;
 
 
 public class SortTest {
