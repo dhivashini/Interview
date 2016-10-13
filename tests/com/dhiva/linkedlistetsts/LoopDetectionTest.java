@@ -30,5 +30,17 @@ public class LoopDetectionTest {
 		boolean expected = true;
 		assertEquals(expected, hasLoop);
 	}
+	
+	@Test
+	public void test2() {
+		LinkedListNode n1 = new LinkedListNode(20, null);
+		LinkedListNode n2 = new LinkedListNode(21, n1);
+		LinkedListNode n3 = new LinkedListNode(22, n2);
+		LinkedListNode n4 = new LinkedListNode(23, n3);
+		n1.next = n4;
+		boolean hasLoop = DetectAndRemoveLoop.detectLoop(n1);
+		boolean expected = true;
+		assertEquals(expected, hasLoop);
+	}
 
 }
