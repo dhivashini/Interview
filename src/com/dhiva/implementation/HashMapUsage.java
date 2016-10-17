@@ -18,6 +18,11 @@ public class HashMapUsage {
 			Integer key = keyIterator.next();
 			System.out.println("key is"+key+"value is"+mapObj.get(key));		
 		}
+		for (Entry<Integer, String> entry : mapObj.entrySet()) {
+            Integer key=entry.getKey();
+            String value=entry.getValue();
+            System.out.println("key is"+key+"value is"+value);
+        }
 		//size of map
 		System.out.println("size of hashmap  is"+mapObj.size());
 		//check if a map contains a key/value
