@@ -1,4 +1,4 @@
-package com.dhiva.arraylltests;
+package com.dhiva.arraystringtests;
 
 import static org.junit.Assert.assertEquals;
 
