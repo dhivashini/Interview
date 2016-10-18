@@ -7,7 +7,6 @@ public class URLify {
 		for(int i=1;i<s.length;i++){
 			output += "%20"+s[i];
 		}
-		System.out.println(output);
 		return output;
 	}
 }
