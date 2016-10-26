@@ -43,7 +43,6 @@ public class HashSetUsage {
 		List<Person> sortedList = new ArrayList(setObj);
 
 		// compareTo
-
 		Collections.sort(sortedList, new Comparator<Person>() {
 			@Override
 			public int compare(Person o1, Person o2) {

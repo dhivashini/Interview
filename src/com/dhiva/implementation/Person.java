@@ -20,7 +20,7 @@ public class Person implements Comparable {
 	}
 
 	public String getLastName() {
-		return this.firstName;
+		return this.lastName;
 	}
 
 	public String getSex() {
