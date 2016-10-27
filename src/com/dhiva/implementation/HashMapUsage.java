@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 
 public class HashMapUsage {
 	public static void main(String[] args) {
-//		HashMap<Integer, String> mapObj = new HashMap<Integer, String>();
+		// HashMap<Integer, String> mapObj = new HashMap<Integer, String>();
 		Person dhiva = new Person("dhisha", "jagan", "f", 21);
 		Person hari = new Person("dhisha", "jagan", "f", 21);
 		Person sk = new Person("kou", "sekhar", "m", 25);
@@ -14,31 +14,33 @@ public class HashMapUsage {
 		HashMap<Person, Integer> mapObj = new HashMap<Person, Integer>();
 
 		// add k,v pair to map
-//		mapObj.put(21, "hello");
+		// mapObj.put(21, "hello");
 		mapObj.put(dhiva, 10);
 		mapObj.put(hari, 2);
 		mapObj.put(sk, 5);
 		mapObj.put(manoj, 1);
 		mapObj.put(hani, 3);
-		
+
 		// retrieve value with k
-//		Integer k1 = 21;
-//		String v1 = mapObj.get(k1);
+		// Integer k1 = 21;
+		// String v1 = mapObj.get(k1);
 		System.out.println(mapObj.get(dhiva));
-		
-	
-		
-		// iterating hashmap
+
+		// iterating hashmap with keyset
 		Iterator<Person> keyIterator = mapObj.keySet().iterator();
 		while (keyIterator.hasNext()) {
 			Person key = keyIterator.next();
-			System.out.println("key is " + key.getFirstName()+" "+key.getLastName() + " value is " + mapObj.get(key));
+			System.out
+					.println("key is " + key.getFirstName() + " " + key.getLastName() + " value is " + mapObj.get(key));
 		}
+		
+		//iterate using entryset
 		for (Entry<Person, Integer> entry : mapObj.entrySet()) {
 			Person key = entry.getKey();
 			Integer value = entry.getValue();
-			System.out.println("key is " + key.getFirstName()+" "+key.getLastName() + " value is " + value);
+			System.out.println("key is " + key.getFirstName() + " " + key.getLastName() + " value is " + value);
 		}
+		
 		// size of map
 		System.out.println("size of hashmap  is" + mapObj.size());
 
@@ -51,19 +53,18 @@ public class HashMapUsage {
 		System.out.println("Following value is removed from Map: " + value);
 		System.out.println(mapObj.get(sk));
 		System.out.println("is map empty?" + mapObj.isEmpty());
-//		mapObj.put(31, "world");
-//		mapObj.put(41, "hey");
+		// mapObj.put(31, "world");
+		// mapObj.put(41, "hey");
 
 		// sort map
 		System.out.println("Unsorted HashMap: " + mapObj);
 		TreeMap<Person, Integer> sortedHashMap = new TreeMap<Person, Integer>(mapObj);
-		for (Entry<Person, Integer> entry : sortedHashMap.entrySet())
-		{
-		    System.out.println(entry.getKey().getFirstName() + "/" + entry.getValue());
+		for (Entry<Person, Integer> entry : sortedHashMap.entrySet()) {
+			System.out.println(entry.getKey().getFirstName() + "/" + entry.getValue());
 		}
-		
+
 		// put same key obj
-//		mapObj.put(21, "this is duplicate");
+		// mapObj.put(21, "this is duplicate");
 		System.out.println("value for key 21 is " + mapObj.get(21));
 	}
 }
