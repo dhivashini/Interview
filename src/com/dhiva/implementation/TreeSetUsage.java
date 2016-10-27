@@ -31,7 +31,8 @@ public class TreeSetUsage {
 		
 		System.out.println(treesetObj.contains(hari));
 		System.out.println(treesetObj.contains(dhiva));
-		
+		System.out.println(treesetObj.size());
+
 		//sort by age
 		List<Person> sortedList = new ArrayList(treesetObj);
 		Collections.sort(sortedList);
