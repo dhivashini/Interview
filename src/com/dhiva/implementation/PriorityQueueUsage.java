@@ -32,7 +32,10 @@ public class PriorityQueueUsage {
         System.out.println(queue.size());
         System.out.println(queue.remove().getFirstName());
         System.out.println(queue.size());
-
+        
+        System.out.println(queue.peek().getFirstName()+queue.peek().getAge());
+        System.out.println(queue.size());
+        
         while (queue.size() != 0)
         {
             System.out.println(queue.poll().getFirstName());
