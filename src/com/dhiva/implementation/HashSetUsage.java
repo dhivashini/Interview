@@ -16,6 +16,8 @@ public class HashSetUsage {
 		Person hani = new Person("hanumesh", "m", "m", 26);
 
 		HashSet<Person> setObj = new HashSet<Person>();
+		HashSet<Integer> intSetObj = new HashSet<Integer>();
+		
 		// add objects
 		setObj.add(dhiva);
 		setObj.add(hari);
@@ -33,7 +35,7 @@ public class HashSetUsage {
 		}
 		// get person info
 		for (Person p : setObj) {
-			System.out.printf(p.getFirstName(), p.getLastName());
+			System.out.printf(p.getFirstName()+" "+p.getLastName());
 			System.out.println();
 		}
 		// check for equals method
