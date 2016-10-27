@@ -34,8 +34,8 @@ public class Person implements Comparable {
 	public int compareTo(Object arg0) {
 		Person p1 = (Person) arg0;
 		// return (this.age < p1.age) ? -1 : (this.age > p1.age) ? 1 : 0;
-		// return this.age-p1.age;
-		return this.lastName.compareTo(p1.lastName);
+		 return this.age-p1.age;
+		//return this.lastName.compareTo(p1.lastName);
 	}
 
 	@Override
