@@ -41,8 +41,8 @@ public class Person implements Comparable {
 	@Override
 	public boolean equals(Object o) {
 		Person p1 = (Person) o;
-		if (this.firstName.compareTo(p1.firstName) == 1 && this.lastName.compareTo(p1.lastName) == 1
-				&& this.age == p1.age && this.sex.compareTo(p1.sex) == 1) {
+		if (this.getFirstName().equals(p1.getFirstName()) && this.getLastName().equals(p1.getLastName())
+				&& this.age == p1.age && this.getSex().equals(p1.getSex())) {
 			return true;
 		}
 		else{
