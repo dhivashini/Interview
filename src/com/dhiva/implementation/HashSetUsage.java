@@ -53,7 +53,7 @@ public class HashSetUsage {
 		});
 
 		for (Person p : sortedList) {
-			System.out.printf(p.getFirstName(), p.getLastName());
+			System.out.printf(p.getFirstName()+ p.getLastName());
 			System.out.println();
 		}
 
