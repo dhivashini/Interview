@@ -13,8 +13,6 @@ public class ArrayListImplementationTest {
 		arrList.add("hi");
 		arrList.size();
 		arrList.remove(1);
-		
-
 	}
 	
 }
