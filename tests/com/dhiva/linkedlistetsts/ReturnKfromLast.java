@@ -1,12 +1,9 @@
 package com.dhiva.linkedlistetsts;
-
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import com.dhiva.linkedlist.*;
 
-import com.dhiva.linkedlist.LinkedListNode;
-import com.dhiva.linkedlist.RemoveDuplicates;
-
-public class RemoveDuplicatesTest {
+public class ReturnKfromLast {
 	@Test
 	public void test() {
 		LinkedListNode n1 = new LinkedListNode(20, null);
@@ -14,7 +11,8 @@ public class RemoveDuplicatesTest {
 		LinkedListNode n3 = new LinkedListNode(2, n2);
 		LinkedListNode n4 = new LinkedListNode(21, n3);
 		LinkedListNode n5 = new LinkedListNode(24, n4);
-		LinkedListNode n6 = new LinkedListNode(26, n5);
-		RemoveDuplicates.removeDups(n6);
+		int output = ReturnKfromLast.returnKNode(n1, 2);
+		int expected = 21;
+		assertEquals(expected, output);
 	}
 }
