@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import com.dhiva.linkedlist.*;
 
-public class ReturnKfromLast {
+public class ReturnKfromLastTest {
 	@Test
 	public void test() {
 		LinkedListNode n1 = new LinkedListNode(20, null);
@@ -11,7 +11,7 @@ public class ReturnKfromLast {
 		LinkedListNode n3 = new LinkedListNode(2, n2);
 		LinkedListNode n4 = new LinkedListNode(21, n3);
 		LinkedListNode n5 = new LinkedListNode(24, n4);
-		int output = ReturnKfromLast.returnKNode(n1, 2);
+		int output = ReturnKfromLast.returnKNode(n1, 3);
 		int expected = 21;
 		assertEquals(expected, output);
 	}

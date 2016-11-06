@@ -9,7 +9,7 @@ public class ReturnKfromLast {
 			length++;
 		}
 		temp=head;
-		for(int i=0;i<length-k;i++){
+		for(int i=1;i<length-k+1;i++){
 			temp=temp.next;
 		}
 		System.out.println(temp.value);
