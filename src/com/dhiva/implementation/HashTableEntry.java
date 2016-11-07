@@ -1,19 +1,19 @@
 package com.dhiva.implementation;
 
 public class HashTableEntry {
-	private Object key;
-	private Object value;
+	private int key;
+	private int value;
 
-	HashTableEntry(Object key, Object value) {
+	HashTableEntry(int key, int value) {
 		this.key = key;
 		this.value = value;
 	}
 
-	public Object getKey() {
+	public int getKey() {
 		return this.key;
 	}
 
-	public Object getValue() {
+	public int getValue() {
 		return this.value;
 	}
 
