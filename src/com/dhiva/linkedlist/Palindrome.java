@@ -7,7 +7,7 @@ public class Palindrome {
 		LinkedListNode slow = head;
 		LinkedListNode fast = head;
 		Stack<Integer> palindromeStack = new Stack<Integer>();
-		while (fast != null || fast.next != null) {
+		while (fast != null && fast.next != null) {
 			palindromeStack.push(slow.value);
 			slow = slow.next;
 			fast = fast.next.next;
