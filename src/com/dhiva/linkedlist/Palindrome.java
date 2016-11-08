@@ -3,13 +3,13 @@ package com.dhiva.linkedlist;
 import java.util.Stack;
 
 public class Palindrome {
-	public boolean isPalindrome(LinkedListNode head) {
+	public static boolean isPalindrome(LinkedListNode head) {
 		LinkedListNode slow = head;
 		LinkedListNode fast = head;
 		Stack<Integer> palindromeStack = new Stack<Integer>();
 		while (fast != null || fast.next != null) {
-			slow = slow.next;
 			palindromeStack.push(slow.value);
+			slow = slow.next;
 			fast = fast.next.next;
 		}
 		if (fast != null)
