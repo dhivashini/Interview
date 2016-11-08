@@ -24,5 +24,9 @@ public class BSTImplementationTest {
 
 		// print inorder traversal of the BST
 		tree.inorder();
+		tree.deleteNode(20);
+		tree.deleteNode(30);
+		tree.deleteNode(50);
+
 	}
 }
