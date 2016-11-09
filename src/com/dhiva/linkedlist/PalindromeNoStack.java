@@ -2,6 +2,9 @@ package com.dhiva.linkedlist;
 
 public class PalindromeNoStack {
 	public static boolean isPalindrome(LinkedListNode head) {
+		if (head.next == null || head == null)
+			return true;
+
 		LinkedListNode slow = head;
 		LinkedListNode fast = head;
 		LinkedListNode prev = null;
