@@ -57,13 +57,15 @@ public class PalindromeTest {
 		assertEquals(expected, output);
 	}
 
+	@Test
 	public void test4() {
-		LinkedListNode n1 = new LinkedListNode(0, null);
-		boolean output = PalindromeNoStack.isPalindrome(n1);
+		LinkedListNode n8 = new LinkedListNode(1);
+		boolean output = PalindromeNoStack.isPalindrome(n8);
 		boolean expected = true;
 		assertEquals(expected, output);
 	}
 
+	@Test
 	public void test5() {
 		LinkedListNode n1 = new LinkedListNode(0, null);
 		LinkedListNode n2 = new LinkedListNode(1, n1);
@@ -72,8 +74,9 @@ public class PalindromeTest {
 		assertEquals(expected, output);
 	}
 
+	@Test
 	public void test6() {
-		LinkedListNode n1 = null;
+		LinkedListNode n1 = new LinkedListNode();
 		boolean output = PalindromeNoStack.isPalindrome(n1);
 		boolean expected = true;
 		assertEquals(expected, output);
