@@ -25,6 +25,9 @@ public class HashMapUsage {
 		// Integer k1 = 21;
 		// String v1 = mapObj.get(k1);
 		System.out.println(mapObj.get(dhiva));
+		
+		System.out.println("hash val"+manoj.hashCode());
+		System.out.println("hash val"+manoj.hashCode());
 
 		// iterating hashmap with keyset
 		Iterator<Person> keyIterator = mapObj.keySet().iterator();
