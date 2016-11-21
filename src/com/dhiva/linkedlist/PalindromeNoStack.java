@@ -20,7 +20,7 @@ public class PalindromeNoStack {
 			slow = slow.next;
 		}
 		mid = null;
-		LinkedListNode revHead = ReverseALl.reverseIterative(slow);
+		LinkedListNode revHead = ReverseALl.reverseRecusively(slow);
 		LinkedListNode secHalf = revHead;
 		while (secHalf != null && head != mid) {
 			if (head.value != secHalf.value)
@@ -28,7 +28,7 @@ public class PalindromeNoStack {
 			head = head.next;
 			secHalf = secHalf.next;
 		}
-		LinkedListNode half = ReverseALl.reverseIterative(revHead);
+		LinkedListNode half = ReverseALl.reverseRecusively(revHead);
 		prev.next = half;
 		return true;
 

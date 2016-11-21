@@ -70,7 +70,7 @@ public class PalindromeTest {
 		LinkedListNode n1 = new LinkedListNode(0, null);
 		LinkedListNode n2 = new LinkedListNode(1, n1);
 		boolean output = PalindromeNoStack.isPalindrome(n2);
-		boolean expected = true;
+		boolean expected = false;
 		assertEquals(expected, output);
 	}
 
