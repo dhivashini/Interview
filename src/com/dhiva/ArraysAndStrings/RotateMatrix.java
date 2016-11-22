@@ -1,6 +1,7 @@
 package com.dhiva.ArraysAndStrings;
 
 public class RotateMatrix {
+	//rotate matrix
 	public static int[][] rotateInput(int[][] input) {
 		int[][] output = new int[input.length][input.length];
 		int k = 0;
@@ -14,5 +15,10 @@ public class RotateMatrix {
 		}
 		return output;
 
+	}
+	
+	//rotate matrix in place
+	public static int[][] rotateInputInPlace(int[][] input) {
+		return output;
 	}
 }
