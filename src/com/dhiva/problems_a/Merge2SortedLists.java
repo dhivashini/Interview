@@ -21,9 +21,11 @@ public class Merge2SortedLists {
 		
 		while(index_1<array1.length){
 			output.add(array1[index_1]);
+			index_1++;
 		}
 		while(index_2<array2.length){
-			output.add(array1[index_2]);
+			output.add(array2[index_2]);
+			index_2++;
 		}
 		return output;
 	}

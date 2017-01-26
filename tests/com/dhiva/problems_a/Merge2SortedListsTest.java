@@ -24,4 +24,31 @@ public class Merge2SortedListsTest {
 	    List<Integer> output = Merge2SortedLists.mergeList(a,b);
 		assertEquals(expected, output);
 	}
+	@Test
+	public void test1() {
+		int[] a = {7,8,9};
+		int[] b = {1,8,20,24};
+		List<Integer> expected = new ArrayList<Integer>();
+	    expected.add(1);
+	    expected.add(7);
+	    expected.add(8);
+	    expected.add(8);
+	    expected.add(9);
+	    expected.add(20);
+	    expected.add(24);
+	    List<Integer> output = Merge2SortedLists.mergeList(a,b);
+		assertEquals(expected, output);
+	}
+	@Test
+	public void test2() {
+		int[] a = {3,3,4};
+		int[] b = {4};
+		List<Integer> expected = new ArrayList<Integer>();
+	    expected.add(3);
+	    expected.add(3);
+	    expected.add(4);
+	    expected.add(4);
+	    List<Integer> output = Merge2SortedLists.mergeList(a,b);
+		assertEquals(expected, output);
+	}
 }
