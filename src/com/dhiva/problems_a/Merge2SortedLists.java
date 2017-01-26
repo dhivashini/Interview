@@ -10,7 +10,7 @@ public class Merge2SortedLists {
 		int index_2 = 0;
 
 		while (index_1 < array1.length && index_2 < array2.length) {
-			if(array1[index_1]<array2[index_2]){
+			if (array1[index_1] < array2[index_2]) {
 				output.add(array1[index_1]);
 				index_1++;
 			} else {
@@ -18,12 +18,12 @@ public class Merge2SortedLists {
 				index_2++;
 			}
 		}
-		
-		while(index_1<array1.length){
+
+		while (index_1 < array1.length) {
 			output.add(array1[index_1]);
 			index_1++;
 		}
-		while(index_2<array2.length){
+		while (index_2 < array2.length) {
 			output.add(array2[index_2]);
 			index_2++;
 		}
