@@ -17,8 +17,8 @@ public class RotateMatrix {
 
 	}
 	
-	//rotate matrix in place
-	public static int[][] rotateInputInPlace(int[][] input) {
-		return output;
-	}
+//	//rotate matrix in place
+//	public static int[][] rotateInputInPlace(int[][] input) {
+//		return output;
+//	}
 }
