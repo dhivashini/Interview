@@ -8,5 +8,6 @@ public class HashNode {
 	 public HashNode(Object key, Object value){
 		 this.key = key;
 		 this.value = value;
+		 next = null;
 	 }
 }
