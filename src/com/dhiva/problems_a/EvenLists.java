@@ -19,10 +19,10 @@ public class EvenLists {
 			} else {
 				sum2 += list[i];
 				list2.add(list[i]);
-			}
-			lists.add(list1);
-			lists.add(list2);
+			}			
 		}
+		lists.add(list1);
+		lists.add(list2);
 		return lists;
 	}
 }
