@@ -1,5 +1,8 @@
 package com.dhiva.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TraverseTree {
 	// inoder traversal
 	public static void inOrder(Node node) {
@@ -26,6 +29,20 @@ public class TraverseTree {
 		postOrder(node.left);
 		postOrder(node.right);
 		System.out.println(node.data);
+	}
+
+	// level-order traversal
+	public static void levelOrder(Node node) {
+		Queue<Node> levelQueue = new LinkedList<>();
+		levelQueue.add(node);
+		while (!levelQueue.isEmpty()) {
+			Node temp = levelQueue.poll();
+			System.out.println(temp.data);
+			if (temp.left != null)
+				levelQueue.add(temp.left);
+			if (temp.right != null)
+				levelQueue.add(temp.right);
+		}
 	}
 
 }
