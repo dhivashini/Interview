@@ -5,7 +5,7 @@ public class BinaryTreeMirror {
 		return checkTree(root, root);
 	}
 
-	private static boolean checkTree(TreeNode root1, TreeNode root2) {
+	static boolean checkTree(TreeNode root1, TreeNode root2) {
 		if (root1 == null && root2 == null)
 			return true;
 		if (root1 == null || root2 == null)
