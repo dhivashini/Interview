@@ -13,6 +13,20 @@ public class TraverseTree {
 		inOrder(node.right);
 	}
 
+	// bfs
+	public static void bfs(Node node) {
+		Queue<Node> list = new LinkedList<>();
+		list.add(node);
+		while (!list.isEmpty()) {
+			Node temp = list.poll();
+			System.out.println(temp.data);
+			if (temp.left != null)
+				list.add(temp.left);
+			if (temp.right != null)
+				list.add(temp.right);
+		}
+	}
+
 	// pre-order traversal
 	public static void preOrder(Node node) {
 		if (node == null)
@@ -29,20 +43,6 @@ public class TraverseTree {
 		postOrder(node.left);
 		postOrder(node.right);
 		System.out.println(node.data);
-	}
-
-	// level-order traversal
-	public static void levelOrder(Node node) {
-		Queue<Node> levelQueue = new LinkedList<>();
-		levelQueue.add(node);
-		while (!levelQueue.isEmpty()) {
-			Node temp = levelQueue.poll();
-			System.out.println(temp.data);
-			if (temp.left != null)
-				levelQueue.add(temp.left);
-			if (temp.right != null)
-				levelQueue.add(temp.right);
-		}
 	}
 
 }

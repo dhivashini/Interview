@@ -14,6 +14,15 @@ public class TraversalTest {
 	}
 
 	@Test
+	public void testbfs() {
+		Node n1 = new Node(100);
+		n1.left = new Node(20);
+		n1.right = new Node(500);
+		n1.left.left = new Node(10);
+		n1.left.right = new Node(30);
+		TraverseTree.bfs(n1);
+	}
+	@Test
 	public void test1() {
 		Node n1 = new Node(100);
 		n1.left = new Node(20);
@@ -33,13 +42,4 @@ public class TraversalTest {
 		TraverseTree.postOrder(n1);
 	}
 	
-	@Test
-	public void test3() {
-		Node n1 = new Node(100);
-		n1.left = new Node(20);
-		n1.right = new Node(500);
-		n1.left.left = new Node(10);
-		n1.left.right = new Node(30);
-		TraverseTree.levelOrder(n1);
-	}
 }
