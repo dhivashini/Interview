@@ -21,6 +21,5 @@ public class SubsetSum {
 		ArrayList<Integer> newArray =(ArrayList<Integer>) array.clone();
 		newArray.add(toProcess.get(0));
 		subsets(newArray, newToProcessedArray, targetSum);
-
 	}
 }
