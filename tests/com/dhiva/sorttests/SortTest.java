@@ -42,4 +42,12 @@ public class SortTest {
 		int[] actual = new int[] { 5, 6, 11, 12, 13 };
 		assertArrayEquals(actual, sortedElements);
 	}
+
+	@Test
+	public void test4() {
+		int[] elements = new int[] { 3, 1, 12, 11, 13, 5, 6 };
+		int[] sortedElements = QuickSort.quickSort(elements);
+		int[] actual = new int[] { 1, 3, 5, 6, 11, 12, 13 };
+		assertArrayEquals(actual, sortedElements);
+	}
 }

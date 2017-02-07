@@ -4,21 +4,17 @@ import java.util.Arrays;
 
 public class Merge {
 	public static int[] mergeSort(int[] input) {
-		return mergeSplit(input, 0, input.length);
+		return mergeSplit(input);
 	}
 
-	private static int[] mergeSplit(int[] input, int start, int length) {
-		int mid = (length / 2);
+	private static int[] mergeSplit(int[] input) {
+		int mid = Math.abs(input.length / 2);
+		System.out.println(mid);
 		if (input.length <= 1)
 			return input;
-//		int[] left = new int[length / 2 + 1];
-//		int[] right = new int[(length - mid) + 1];
-		int[] temp = new int[length];
-		for (int i = start; i < length; i++)
-			temp[i] = input[i];
-		int[] left = mergeSplit(temp, start, mid);
-		int[] right = mergeSplit(temp, mid + 1, length);
-		return mergeJoin(left, right);
+		return mergeJoin(mergeSplit(Arrays.copyOfRange(input, 0, mid)),
+				mergeSplit(Arrays.copyOfRange(input, mid, input.length)));
+
 	}
 
 	private static int[] mergeJoin(int[] left, int[] right) {
