@@ -8,6 +8,6 @@ public class ReverseASentence {
 		String s;
 		
 		StringBuffer s1= new StringBuffer();
-		s1.
+		//s1.
 	}
 }
