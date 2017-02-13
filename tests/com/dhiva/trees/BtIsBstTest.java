@@ -11,7 +11,7 @@ public class BtIsBstTest {
 		n1.left = new Node(20);
 		n1.right = new Node(500);
 		n1.left.left = new Node(10);
-		n1.left.right = new Node(150);
+		n1.left.right = new Node(90);
 		boolean output = BtIsBst.checkIfBst(n1);
 		boolean expected = true;
 		assertEquals(expected, output);

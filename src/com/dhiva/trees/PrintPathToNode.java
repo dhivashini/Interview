@@ -8,7 +8,7 @@ public class PrintPathToNode {
 	public static Node pathToNode(Node root, int target) {
 
 		if (root == null) {
-			return root;
+			return null;
 		}
 		if (root.data == target) {
 			path.add(target);
