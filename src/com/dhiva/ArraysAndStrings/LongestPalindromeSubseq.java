@@ -15,18 +15,20 @@ public class LongestPalindromeSubseq {
 				countMatrix[i][i + 1] = 0;
 		}
 		String longestStr = null;
-		for (int i = 3; i <= input.length(); i++) {
-			for (int j = 0; j <= input.length() - i; j++) {
+		for (int i = 3; i < input.length(); i++) {
+			for (int j = 0; j < input.length() - i; j++) {
 				int k = j + i - 1;
-				if (input.charAt(j) != input.charAt(k))
-					countMatrix[j][k] = 0;
-				if (countMatrix[j + 1][k - 1] == 1) {
-					countMatrix[j][k] = 1;
-					if (i > maxLen) {
-						maxLen = i;
-						longestStr = input.substring(j, k + 1);
-					}
+				if (input.charAt(j) == input.charAt(k)) {
+					countMatrix[j][k] = countMatrix[j + 1][k - 1];
+					if (countMatrix[j][k] == 1) {
+						if (i > maxLen) {
+							maxLen = i;
+							longestStr = input.substring(j, k + 1);
+						}
+					}		
 				}
+				else
+					countMatrix[j][k]=0;
 			}
 		}
 		System.out.println(longestStr);
