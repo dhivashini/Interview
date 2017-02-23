@@ -22,4 +22,10 @@ public class StackImplementation<T> {
 			throw new ArrayIndexOutOfBoundsException();
 		return top.data;
 	}
+
+	public boolean isEmpty() {
+		if (top == null)
+			return true;
+		return false;
+	}
 }
