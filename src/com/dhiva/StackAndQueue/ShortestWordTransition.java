@@ -25,6 +25,7 @@ public class ShortestWordTransition {
 				if (areAdjacent(temp.word, s)) {
 					Node n = new Node(s, temp.length + 1);
 					queue.add(n);
+					dict.remove(temp);
 					if (s == target)
 						return n.length;
 				}
