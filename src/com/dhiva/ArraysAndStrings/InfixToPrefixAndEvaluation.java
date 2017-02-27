@@ -8,7 +8,7 @@ public class InfixToPrefixAndEvaluation {
 		StringBuffer prefix = new StringBuffer(infix.length());
 		char c;
 
-		for (int i = infix.length(); i >=0 ; i--) {
+		for (int i = infix.length()-1; i >=0 ; i--) {
 			c = infix.charAt(i);
 
 			if (isOperand(c)) {
@@ -20,10 +20,10 @@ public class InfixToPrefixAndEvaluation {
 			// until an ‘(‘ is encountered.
 			else if (c == '(') {
 
-				while (!stack.isEmpty() && stack.peek() != '(') {
+				while (!stack.isEmpty() && stack.peek() != ')') {
 					prefix.append(stack.pop());
 				}
-				if (!stack.isEmpty() && stack.peek() != '(')
+				if (!stack.isEmpty() && stack.peek() != ')')
 					return null;
 				else if (!stack.isEmpty())
 					stack.pop();
