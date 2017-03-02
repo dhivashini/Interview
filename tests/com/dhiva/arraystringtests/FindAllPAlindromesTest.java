@@ -10,7 +10,7 @@ import com.dhiva.ArraysAndStrings.FindAllPalindromesInString;
 public class FindAllPAlindromesTest {
 	@Test
 	public void test() {
-		List<String> output = FindAllPalindromesInString.findPalindromes("fsmomsg");
+		int output = FindAllPalindromesInString.findCount("ggeekskeeg");
 		System.out.println(output);
 	}
 }

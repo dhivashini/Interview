@@ -9,8 +9,8 @@ import com.dhiva.ArraysAndStrings.LongestPalindromeSubseq;
 public class LongestPalindromeSubseqTest {
 	@Test
 	public void test() {
-		int expected = 10;
-		int output = LongestPalindromeSubseq.findCount("forgeeksskeegfor");
+		int expected = 9;
+		int output = LongestPalindromeSubseq.findCount("forgeekskeeg");
 		assertEquals(expected, output);
 	}
 }

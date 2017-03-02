@@ -17,18 +17,21 @@ public class LRUCacheImplementation {
 	}
 
 	public void setNodeToCache(int data) {
-		if (size <= CACHE_SIZE) {
-			if (first == null && last == null) {
-				first = new LRUNode(data);
-				first = last;
-			} else {
-				LRUNode temp = first;
-				while (temp.next != null) {
-					if (temp.data == data) {
-						temp.next = first;
-						first = temp;
-					}
+		if (first == null && last == null) {
+			first = new LRUNode(data);
+			first = last;
+		}
+		else {
+			LRUNode temp = first;
+			while (temp.next != null) {
+				if (temp.data == data) {
+					temp.next = first;
+					first = temp;
 				}
+			}
+		}
+		if (size <= CACHE_SIZE) {
+			 
 				temp.next = new LRUNode(data);
 				last = temp;
 			}
