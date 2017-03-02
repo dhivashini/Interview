@@ -20,8 +20,8 @@ public class KClosestPointsTest {
 		points[3] = p4;
 		points[4] = p5;
 		KClosestPoints obj = new KClosestPoints();
-		Point[] output = obj.getKClosestPoints(1, points);
+		Point[] output = obj.getKClosestPoints(2, points);
 		for(int i=0 ;i <output.length;i++)
-		System.out.println(output[i].x+output[i].y);
+		System.out.println(output[i].x+"/"+output[i].y);
 	}
 }
