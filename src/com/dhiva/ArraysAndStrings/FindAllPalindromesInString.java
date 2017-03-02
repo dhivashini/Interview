@@ -60,8 +60,8 @@ public class FindAllPalindromesInString {
 					countMatrix[j][k]=0;
 			}
 		}
-		for (int i = 0; i < countMatrix.length; i++) {
-			for (int j = 0; j < countMatrix[i].length; j++) {
+		for (int i = 0; i < input.length(); i++) {
+			for (int j = 0; j < input.length(); j++) {
 				if(countMatrix[i][j]==1){
 					if(!set.contains(input.substring(i, j+1)))
 						set.add(input.substring(i, j+1));
