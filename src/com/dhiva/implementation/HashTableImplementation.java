@@ -1,30 +1,63 @@
 package com.dhiva.implementation;
 
-public class HashTableImplementation {
-	public static final int TABLE_SIZE = 31;
-	HashTableEntry[] table;
-
-	public HashTableImplementation() {
+public class HashTableImplementation<K,V> {
+	public static int TABLE_SIZE ;
+	public HashTableEntry<K,V>[] table;
+	private int size = 0;
+	
+	public HashTableImplementation(int size){
+		TABLE_SIZE = size;
 		table = new HashTableEntry[TABLE_SIZE];
-		for (int i = 0; i < TABLE_SIZE; i++) {
-			table[i] = null;
+	}
+	
+	public void put(K key, V value){
+		if (key == null)
+			throw new NullPointerException("Key cannot be null");
+		int location = key.hashCode() % TABLE_SIZE;
+		if (table[location] == null)
+			table[location] = new HashTableEntry<K,V>(key, value);
+		else {
+			HashTableEntry<K,V> n = table[location];
+			while (n.next != null) {
+				if (n.key.equals(key)) {
+					n.value = value;
+					return;
+				}
+				n = n.next;
+			}
+			n.next = new HashTableEntry<K,V>(key, value);
+		}
+		size++;
+	}
+	public V get(K key){
+		if (key == null)
+			throw new NullPointerException("Key cannot be null");
+		int location = key.hashCode() % TABLE_SIZE;
+		if (table[location] == null)
+			return null;
+		else {
+			if (table[location].key == key)
+				return (V) table[location].value;
+			else {
+				HashTableEntry<K,V> n = table[location];
+				while (!n.key.equals(key) && n.next != null) {
+					n = n.next;
+				}
+				if (n.next == null)
+					return null;
+				else
+					return (V) n.value;
+			}
 		}
 	}
-
-	public void put(int key, int value) {
-		int hash = (key % TABLE_SIZE);
-		while (table[hash] != null && table[hash].getKey() != key)
-			hash = (hash + 1) % TABLE_SIZE;
-		table[hash] = new HashTableEntry(key, value);
+	
+	
+	public int size(){
+		return this.size;
 	}
+	
+//	public void remove(){
+//		
+//	}
 
-	public int get(int key) {
-		int hash = (key % TABLE_SIZE);
-		while (table[hash] != null && table[hash].getKey() != key)
-			hash = (hash + 1) % TABLE_SIZE;
-		if (table[hash] == null)
-			return -1;
-		else
-			return table[hash].getValue();
-	}
 }
