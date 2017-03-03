@@ -1,7 +1,10 @@
 package com.dhiva.trees;
 
 import java.util.LinkedList;
+import com.dhiva.problems_a.*;
 import java.util.Queue;
+
+import com.dhiva.problems_a.TreeNode;
 
 public class TraverseTree {
 	// inoder traversal
@@ -43,6 +46,15 @@ public class TraverseTree {
 		postOrder(node.left);
 		postOrder(node.right);
 		System.out.println(node.data);
+	}
+
+	public static void inOrder(TreeNode root) {
+		if (root == null)
+			return;
+		inOrder(root.left);
+		System.out.println(root.data);
+		inOrder(root.right);
+		
 	}
 
 }
