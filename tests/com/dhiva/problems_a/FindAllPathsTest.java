@@ -17,8 +17,8 @@ public class FindAllPathsTest {
 		root1.left.right = new TreeNode(6);
 		root1.right.left = new TreeNode(7);
 		FindAllPaths obj = new FindAllPaths();
-		ArrayList<ArrayList<TreeNode>> output=obj.findAllPaths(root1);
-		ArrayList<TreeNode> list = output.get(0);
+		ArrayList<ArrayList<Integer>> output=obj.findAllPaths(root1);
+		ArrayList<Integer> list = output.get(1);
 		for(int i=0;i<list.size();i++){
 		    System.out.println(list.get(i));
 		} 
