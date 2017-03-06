@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 public class FindAllPathsTest {
+	
 	@Test
 	public void test() {
 		TreeNode root1 = new TreeNode(1);
@@ -18,9 +19,7 @@ public class FindAllPathsTest {
 		root1.right.left = new TreeNode(7);
 		FindAllPaths obj = new FindAllPaths();
 		obj.findAllPaths(root1);
-		
-
-		
+			
 	}
 	
 }
