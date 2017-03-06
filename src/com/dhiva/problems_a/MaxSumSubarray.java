@@ -12,4 +12,13 @@ public class MaxSumSubarray {
 		}
 		return maxSoFar;
 	}
+
+	public static int findMaxSumTemp(int[] input) {
+		int maxSoFar = input[0], maxSumHere = input[0];
+		for (int i = 1; i < input.length; i++) {
+			maxSumHere = Math.max(maxSumHere, maxSumHere + input[i]);
+			maxSoFar = Math.max(maxSoFar, maxSumHere);
+		}
+		return maxSoFar;
+	}
 }
