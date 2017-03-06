@@ -4,25 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FindAllPaths {
-	public ArrayList<ArrayList<Integer>> findAllPaths(TreeNode root)
+	public void findAllPaths(TreeNode root)
 	{
-		ArrayList<ArrayList<Integer>> allPaths = new ArrayList<ArrayList<Integer>>();
-		ArrayList<Integer> path = new ArrayList<>();
-		findPath(root, path, allPaths);
-		return allPaths;
-		
+		int[] path = new int[1000];
+		findPath(root, path, 0);
+			
 	}
-	private void findPath(TreeNode root, ArrayList<Integer> path, ArrayList<ArrayList<Integer>> allPaths) {
+	private void findPath(TreeNode root,  int[] path,int pathlen) {
 		if (root == null)
 			return;
-		path.add(root.data);
+		path[pathlen] = root.data;
+		pathlen++;
 		if (root.left == null && root.right == null)
-			allPaths.add(path);
+			printArray(path,pathlen);
 
 		else {
-			findPath(root.right, path, allPaths);
-			findPath(root.left, path, allPaths);
+			findPath(root.right, path, pathlen);
+			findPath(root.left, path, pathlen);
 		}
 
 	}
+	private void printArray(int[] ints, int len) {
+		 int i;
+		 for (i=0; i<len; i++) {
+		 System.out.print(ints[i] + " ");
+		 }
+		 System.out.println();
+		}
+
 }
