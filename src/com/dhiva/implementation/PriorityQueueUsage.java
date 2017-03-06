@@ -20,6 +20,19 @@ public class PriorityQueueUsage {
     			}
     		});
        
+        PriorityQueue<Integer> current = new PriorityQueue<Integer>();
+        current.add(10);
+        current.add(5);
+        current.add(6);
+        current.add(1);
+        current.add(3);
+        current.add(4);
+        
+        while (current.size() != 0)
+        {
+            System.out.println(current.poll());
+        }
+        
         queue.add(hani);
         queue.add(manoj);
         queue.add(sk);
