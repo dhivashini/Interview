@@ -1,13 +1,15 @@
 package com.dhiva.memory;
 
+import java.util.HashMap;
+
 public class LRUCacheImplementation {
-	int CACHE_SIZE = 0;
 	LRUNode first;
 	LRUNode last;
 	int size = 0;
+	HashMap<Integer, LRUNode> cache = new HashMap<Integer, LRUNode>();
 
 	public LRUCacheImplementation(int size) {
-		CACHE_SIZE = size;
+		this.size = size;
 		first = null;
 		last = null;
 	}
@@ -16,42 +18,58 @@ public class LRUCacheImplementation {
 		return this.size;
 	}
 
-	public void setNodeToCache(int data) {
-		if (first == null && last == null) {
-			first = new LRUNode(data);
-			first = last;
+	public int get(int key) {
+		if (cache.containsKey(key)) {
+			LRUNode n = cache.get(key);
+			remove(n);
+			addAsHead(n);
+			return n.value;
 		}
-		else {
-			LRUNode temp = first;
-			while (temp.next != null) {
-				if (temp.data == data) {
-					temp.next = first;
-					first = temp;
-				}
-			}
-		}
-		if (size <= CACHE_SIZE) {
-			 
-				temp.next = new LRUNode(data);
-				last = temp;
-			}
-			size++;
+		return -1;
+	}
+
+	private void addAsHead(LRUNode n) {
+		n.next = first;
+		n.prev = null;
+
+		if (first != null)
+			first.prev = n;
+
+		first = n;
+
+		if (last == null)
+			last = first;
+	}
+
+	private void remove(LRUNode n) {
+		if (n.prev != null)
+			n.prev.next = n.next;
+		else
+			first = n.next;
+		if (n.next != null)
+			n.next.prev = n.prev;
+		else
+			last = n.prev;
+	}
+
+	public void set(int key, int value) {
+		if (cache.containsKey(key)) {
+			LRUNode n = cache.get(key);
+			n.value = value;
+			remove(n);
+			addAsHead(n);
 		} else {
-			while (temp.next != null) {
-				if (temp.data == data) {
-					temp.next = first;
-					first = temp;
-				}
+			LRUNode n = new LRUNode(key, value);
+			if (cache.size() >= size) {
+				cache.remove(last);
+				remove(last);
+				addAsHead(n);
+			} else {
+				addAsHead(n);
 			}
-			LRUNode temp = new LRUNode(data);
-			temp.next = first;
-			first = temp;
-			
+			cache.put(key, n);
 		}
 
 	}
 
-	public int getNodeFromCache() {
-
-	}
 }
