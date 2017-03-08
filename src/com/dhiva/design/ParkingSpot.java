@@ -1,7 +1,7 @@
 package com.dhiva.design;
 
 public class ParkingSpot {
-	public int spotNumber;
+	private int spotNumber;
     private int area;
     //Assuming only one type of parking spot
     private String type;

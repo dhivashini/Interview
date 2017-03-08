@@ -12,8 +12,5 @@ public class ParkingLot {
 		levels = new ArrayList<ParkingLevel>(size);
 	}
 	
-	
-	
-	
 
 }
