@@ -1,17 +1,15 @@
 package com.dhiva.memory;
 
 public class LRUNode {
-	 int data;
-	 int value;
-	 LRUNode next;
-	 LRUNode prev;
-	
+    public int key;
+    public int value;
+    public LRUNode previous;
+    public LRUNode next;
 
-	public LRUNode(int data, int value) {
-		this.data = data;
-		this.value = data;
-		next = null;
-		prev = null;
-		
-	}
+    public LRUNode(int key, int value) {
+        this.key = key;
+        this.value = value;
+        previous = null;
+        next = null;
+    }
 }

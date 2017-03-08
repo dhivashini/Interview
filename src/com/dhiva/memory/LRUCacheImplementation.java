@@ -3,73 +3,70 @@ package com.dhiva.memory;
 import java.util.HashMap;
 
 public class LRUCacheImplementation {
-	LRUNode first;
-	LRUNode last;
-	int size = 0;
-	HashMap<Integer, LRUNode> cache = new HashMap<Integer, LRUNode>();
+    private int capacity;
+    private HashMap<Integer, LRUNode> data;
+    private LRUNode head;
+    private LRUNode end;
 
-	public LRUCacheImplementation(int size) {
-		this.size = size;
-		first = null;
-		last = null;
-	}
+    public LRUCacheImplementation(int capacity) {
+        this.capacity = capacity;
+        data = new HashMap<>();
+        head = null;
+        end = null;
+    }
 
-	public int getSize() {
-		return this.size;
-	}
+    private void addNodeToHead(LRUNode node) {
+        node.previous = null;
+        node.next = null;
+        if(head != null) {
+            head.previous = node;
+            node.next = head;
+        }
+        head = node;
+        if(end == null) {
+            end = head;
+        }
+    }
 
-	public int get(int key) {
-		if (cache.containsKey(key)) {
-			LRUNode n = cache.get(key);
-			remove(n);
-			addAsHead(n);
-			return n.value;
-		}
-		return -1;
-	}
+    private void removeNode(LRUNode node) {
+        if(node.previous == null)
+            head = node.next;
+        else
+            node.previous.next = node.next;
+        if(node.next != null)
+            node.next.previous = node.previous;
+        else
+            end = node.previous;
+    }
 
-	private void addAsHead(LRUNode n) {
-		n.next = first;
-		n.prev = null;
+    public int get(int key) {
+        if(data.containsKey(key)) {
+            LRUNode node = data.get(key);
+            int value = node.value;
+            removeNode(node);
+            addNodeToHead(node);
+            return value;
+        }
+        return -1;
+    }
 
-		if (first != null)
-			first.prev = n;
-
-		first = n;
-
-		if (last == null)
-			last = first;
-	}
-
-	private void remove(LRUNode n) {
-		if (n.prev != null)
-			n.prev.next = n.next;
-		else
-			first = n.next;
-		if (n.next != null)
-			n.next.prev = n.prev;
-		else
-			last = n.prev;
-	}
-
-	public void set(int key, int value) {
-		if (cache.containsKey(key)) {
-			LRUNode n = cache.get(key);
-			n.value = value;
-			remove(n);
-			addAsHead(n);
-		} else {
-			LRUNode n = new LRUNode(key, value);
-			if (cache.size() >= size) {
-				cache.remove(last);
-				remove(last);
-				addAsHead(n);
-			} else {
-				addAsHead(n);
-			}
-			cache.put(key, n);
-		}
-
-	}
-
+    public void set(int key, int value) {
+        if(data.containsKey(key)) {
+            LRUNode node = data.get(key);
+            node.value = value;
+            removeNode(node);
+            addNodeToHead(node);
+            return;
+        }
+        LRUNode node = new LRUNode(key, value);
+        if(data.size() >= capacity) {
+            data.remove(end.key);
+            removeNode(end);
+            addNodeToHead(node);
+        }
+        else {
+            addNodeToHead(node);
+        }
+        data.put(key, node);
+    }
 }
