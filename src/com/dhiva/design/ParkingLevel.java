@@ -22,7 +22,12 @@ public class ParkingLevel {
 	 
 	 public int getSuitableSpot(String sizeRequired){
 		 //checks size of the users car and returns a suitable and closest spot
+		 //checks availability of spots
 		 return 0;
+	 }
+	 
+	 public ParkingSpot getSpot(int number){
+		 return parkingSpots.get(number);
 	 }
 	
 }
