@@ -1,7 +1,7 @@
 package com.dhiva.design;
 
-public class Vehicle {
-	private String type;
+abstract class Vehicle {
+	protected String licensePlate;
 	protected VehicleSize size;
 
 	public VehicleSize getSize() {

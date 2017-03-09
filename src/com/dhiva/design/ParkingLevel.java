@@ -19,5 +19,10 @@ public class ParkingLevel {
 	        }
 	        return count;
 	    }
+	 
+	 public int getSuitableSpot(String sizeRequired){
+		 //checks size of the users car and returns a suitable and closest spot
+		 return 0;
+	 }
 	
 }

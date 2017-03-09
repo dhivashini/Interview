@@ -7,6 +7,14 @@ public class ParkingSpot {
     private SpotType type;
     private boolean available = true;
     
+    public void setSpotNumber(int number){
+    	this.spotNumber = number;
+    }
+    
+    public int getSpotNumber(){
+    	return spotNumber;
+    }
+    
     public void setType(SpotType type){
     	this.type = type;
     }
