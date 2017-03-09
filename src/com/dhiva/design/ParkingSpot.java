@@ -4,15 +4,15 @@ public class ParkingSpot {
 	private int spotNumber;
     private int area;
     //Assuming only one type of parking spot
-    private String type;
+    private SpotType type;
     private boolean available = true;
     
-    public void setType(String type){
+    public void setType(SpotType type){
     	this.type = type;
     }
     
     public String getType(){
-    	return this.type;
+    	return type.toString();
     }
     
     public void parkCar(){
