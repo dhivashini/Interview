@@ -1,4 +1,4 @@
-package com.dhiva.design;
+package com.dhiva.ParkingDesign;
 
 public class Ticket {
 	private float timeIn;

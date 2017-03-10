@@ -1,4 +1,4 @@
-package com.dhiva.design;
+package com.dhiva.ParkingDesign;
 
 abstract class Vehicle {
 	protected String licensePlate;
