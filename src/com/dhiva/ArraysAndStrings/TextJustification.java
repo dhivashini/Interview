@@ -7,7 +7,7 @@ public class TextJustification {
 		int index = 0;
 		ArrayList<String> lines = new ArrayList<String>();
 		while (index < words.length) {
-			int count = words[0].length();
+			int count = words[index].length();
 			int last = index + 1;
 
 			while (last < words.length) {
