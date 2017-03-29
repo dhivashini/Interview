@@ -1,5 +1,6 @@
 package com.dhiva.ProgramCreek;
 
+//o(1) - space, o(n) - time
 public class RotateArray {
 	public int[] rotateArray(int[] inputArray, int order) {
 		int index = order % inputArray.length;
