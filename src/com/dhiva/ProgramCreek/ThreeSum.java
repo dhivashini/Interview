@@ -3,7 +3,7 @@ package com.dhiva.ProgramCreek;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//o(n^2) time
 public class ThreeSum {
 	public List<List<Integer>> findTriplet(int[] input) {
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -24,10 +24,10 @@ public class ThreeSum {
 
 						j++;
 						k--;
-						while (j < k && input[j] == input[j - 1])
-							j++;
-						while (j < k && input[k] == input[k + 1])
-							k--;
+//						while (j < k && input[j] == input[j - 1])
+//							j++;
+//						while (j < k && input[k] == input[k + 1])
+//							k--;
 
 					} else if (input[i] + input[j] + input[k] < 0) {
 						j++;
