@@ -1,7 +1,7 @@
 package com.dhiva.ProgramCreek;
 
 import java.util.HashMap;
-
+// o(n) time complexity
 public class TwoSum {
 	public int[] twoSum(int[] nums, int target) {
 		int[] a = new int[2];

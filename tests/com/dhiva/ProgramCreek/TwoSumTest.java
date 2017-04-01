@@ -12,4 +12,12 @@ public class TwoSumTest {
 		int[] result = obj.twoSum(input, 7);
 		System.out.println(Arrays.toString(result));
 	}
+	
+	@Test
+	public void test1(){
+		int[] input = {1,3,5,6,8};
+		TwoSumSorted obj = new TwoSumSorted();
+		int[] result = obj.twoSum(input, 7);
+		System.out.println(Arrays.toString(result));
+	}
 }
