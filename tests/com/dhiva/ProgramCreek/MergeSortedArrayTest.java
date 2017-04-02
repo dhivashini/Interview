@@ -1,5 +1,7 @@
 package com.dhiva.ProgramCreek;
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class MergeSortedArrayTest {
@@ -12,7 +14,8 @@ public class MergeSortedArrayTest {
 		A[2] = 5;
 		A[3] = 9;
 		int[] B = { 2, 6, 11 };
-		int[] output = obj.merge(A, A.length, B, B.length);
-		System.out.println(output);
+		int[] output = obj.merge(A, 4, B, B.length);
+		int[] expected = { 1, 2, 4, 5, 6, 9, 11 };
+		assertEquals(expected, output);
 	}
 }
