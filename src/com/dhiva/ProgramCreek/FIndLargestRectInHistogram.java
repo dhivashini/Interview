@@ -10,17 +10,18 @@ public class FIndLargestRectInHistogram {
 		int max = 0, i = 0;
 
 		while (i < histogram.length) {
-			if (stack.isEmpty() || i > stack.peek()) {
+
+			if (stack.isEmpty() || histogram[i] >= histogram[stack.peek()]) {
 				stack.push(i);
 				i++;
 			} else {
+
 				int p = stack.pop();
 				int h = histogram[p];
 				int w = stack.isEmpty() ? i : i - stack.peek() - 1;
 				max = Math.max(h * w, max);
 			}
 		}
-
 		while (!stack.isEmpty()) {
 			int p = stack.pop();
 			int h = histogram[p];
