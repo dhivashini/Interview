@@ -13,7 +13,7 @@ public class CombinationsTest {
 		// bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc,
 		// dacb, dbac, dbca, dcab, dcba]";
 		CombinationsOfString obj = new CombinationsOfString();
-		obj.findCombinations("110?1");
+		obj.findCombinations("110?1?0");
 		// assertEquals(expected, output);
 	}
 }
