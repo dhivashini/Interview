@@ -18,6 +18,7 @@ public class Graph {
 		adj[v].add(u);
 	}
 
+	// O(V+E)
 	public void searchBFS(int src) {
 		boolean[] visited = new boolean[V];
 		LinkedList<Integer> queue = new LinkedList<>();
@@ -41,6 +42,7 @@ public class Graph {
 		}
 	}
 
+	// O(V+E)
 	public void DFS(int src) {
 		boolean[] visited = new boolean[V];
 		DFSUtil(src, visited);
