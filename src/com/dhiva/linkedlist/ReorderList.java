@@ -9,7 +9,6 @@ public class ReorderList {
 		LinkedListNode fast = head;
 		LinkedListNode l1 = head;
 		LinkedListNode prev = null;
-		LinkedListNode l2 = null;
 
 		while (fast != null && fast.next != null) {
 			prev = slow;
@@ -17,7 +16,7 @@ public class ReorderList {
 			fast = fast.next.next;
 		}
 		prev.next = null;
-		l2 = ReverseALl.reverseRecusively(slow);
+		LinkedListNode l2 = ReverseALl.reverseRecusively(slow);
 
 		merge(l1, l2);
 
