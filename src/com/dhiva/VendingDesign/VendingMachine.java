@@ -1,4 +1,4 @@
-package com.src.VendingDesign;
+package com.dhiva.VendingDesign;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,12 +13,19 @@ Return selected product and remaining change if any
 Allow reset operation for vending machine supplier
 */
 public class VendingMachine {
-	ArrayList<T> candies;
+	private Inventory<Coins> cash = new Inventory<Coins>(); 
+	private Inventory<Products> items = new Inventory<Products>();   
+	private Products currentItem; 
+	private double currentBalance; 
+
 	
 	public VendingMachine(int count){
-		
+		//initialize with soem initial count for each product
+
 	}
+	
 	Products selectProduct() {
+		return currentItem;
 
 	}
 
@@ -29,6 +36,10 @@ public class VendingMachine {
 	private void refund() {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public void insertCoin(Coins c){
+		
 	}
 
 	private List<Coins> resetMachine() {

@@ -1,4 +1,4 @@
-package com.src.VendingDesign;
+package com.dhiva.VendingDesign;
 
 public enum Products {
 	CANDY("Candy", 10), SNACK("Snack", 50), NUTS("Nuts", 90), SODA("Soda", 45);

@@ -1,4 +1,4 @@
-package com.src.VendingDesign;
+package com.dhiva.VendingDesign;
 
 public enum Coins {
 	PENNY(1), NICKEL(5), DIME(10), QUARTER(25);
