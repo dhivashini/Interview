@@ -1,25 +1,31 @@
 package com.dhiva.ArraysAndStrings;
 
+import java.util.ArrayList;
+
 public class CountAndSay {
-	public String count(int n) {
-		StringBuilder curr = new StringBuilder("1");
-		StringBuilder prev;
+	public String lookAndSay(int n) {
 		int count;
 		char say;
-		for (int i = 0; i < n; i++) {
-			prev = curr;
-			say = prev.charAt(0);
+		ArrayList<String> list = new ArrayList<>();
+		list.add("1");
+
+		for (int i = 1; i < n; i++) {
+			StringBuilder res = new StringBuilder();
 			count = 1;
+			String prev = list.get(i - 1);
+			say = prev.charAt(0);
 			for (int j = 1; j < prev.length(); j++) {
 				if (prev.charAt(j) != say) {
-					curr.append(count).append(say);
+					res.append(count).append(say);
 					count = 1;
 					say = prev.charAt(j);
+				} else {
+					count++;
 				}
-				count++;
 			}
-			curr.append(count).append(say);
+			res.append(count).append(say);
+			list.add(res.toString());
 		}
-		return curr.toString();
+		return list.get(n - 1);
 	}
 }
